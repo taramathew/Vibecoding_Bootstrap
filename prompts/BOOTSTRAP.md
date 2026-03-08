@@ -6,7 +6,7 @@ Paste this into a fresh Claude Code session to set up a new project with the Vib
 
 1. Clone the bootstrap repo (if not already):
    ```bash
-   git clone https://github.com/your-org/Vibecoding_Bootstrap.git
+   git clone https://github.com/taramathew/Vibecoding_Bootstrap.git
    ```
 2. Navigate to your target project directory (empty or existing)
 3. Have your project's design document ready (path to it).

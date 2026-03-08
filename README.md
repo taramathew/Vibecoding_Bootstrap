@@ -39,7 +39,7 @@ Vibecoding_Bootstrap/
 
 ```bash
 # 1. Clone the bootstrap repo
-git clone https://github.com/your-org/Vibecoding_Bootstrap.git
+git clone https://github.com/taramathew/Vibecoding_Bootstrap.git
 
 # 2. Go to your new project directory (empty or existing)
 cd ~/projects/my-new-project
