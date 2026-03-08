@@ -1,0 +1,18 @@
+{
+  "name": "project-plugins",
+  "owner": {
+    "name": "Project Team"
+  },
+  "plugins": [
+    {
+      "name": "code-review",
+      "source": "./code-review",
+      "description": "Automated code review for pull requests using multiple specialized agents with confidence-based scoring"
+    },
+    {
+      "name": "plan-workflow",
+      "source": "./plan-workflow",
+      "description": "Plan creation, prompt creation, and documentation optimisation commands for feature workflow"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+# CLAUDE.md — [Project Name]
+
+## Foundational Principles
+<!-- Adjust these to match your project's values. Order = priority when conflicts arise. -->
+1. **SIMPLE** — the simplest design that works. If it can be removed without losing capability, remove it.
+2. **CORRECT** — no bugs, no security holes, no data corruption
+3. **SCALABLE** — handles 10x growth without redesign
+4. **MAINTAINABLE** — any developer can understand and extend the code
+
+When principles conflict: Simple > Correct > Scalable > Maintainable.
+
+## Architecture Reference (MUST read before building)
+<!-- Update these paths to match your project structure -->
+- **Design Doc**: `.docs/solutions/[design-doc].md` — source of truth for data model, schemas, and design rationale
+- **Architecture**: `.docs/architecture/` — subsystem documentation
+- **Decisions**: `.docs/logs/DECISIONS.md` — architectural decision records
+- **Implementation Log**: `.docs/logs/IMPLEMENTATION_LOG.md` — chronological change journal
+
+Read the design doc before making architectural decisions. Do not deviate without documenting why in DECISIONS.md.
+
+## Tech Stack
+<!-- List your tech stack here. Example: -->
+<!-- - **Language**: TypeScript (strict mode) -->
+<!-- - **Runtime**: Node.js -->
+<!-- - **Database**: PostgreSQL + [ORM] -->
+<!-- - **Testing**: [framework] -->
+<!-- - **Package Manager**: [pnpm/npm/bun] -->
+
+See design doc for full tech stack details.
+
+## Critical Rules
+<!-- Add your project's non-negotiable rules here. Examples: -->
+- TypeScript strict mode — no `any` types
+- Forward-only database migrations, backward-compatible
+- Shared types in a central types file
+- <!-- Add security rules specific to your project -->
+- <!-- Add data integrity rules -->
+- <!-- Add deployment constraints -->
+
+## Independent Thinking (CRITICAL)
+- Do NOT blindly agree with the user or the design doc
+- If asked to add complexity, question whether it's necessary
+- If a simpler approach exists, propose it — even if it contradicts existing design
+- When you see over-engineering, say so. When you see a gap, flag it.
+- The design doc is a living document, not gospel. Challenge it with evidence.
+
+## Documentation
+After EVERY code change, append to `.docs/logs/IMPLEMENTATION_LOG.md` (date, files changed, what, why, decisions, issues). When choosing between architectural alternatives, write an ADR in `.docs/logs/DECISIONS.md`.
+
+## Development Workflow
+This project follows a **Backlog → Plan → Prompt → Execute → Review → Learn** workflow:
+1. **Plan**: Run `/create-plan [feature]` — scans codebase, produces a structured plan
+2. **Prompt**: Run `/create-prompts [plan-name]` — converts plan into executable prompts
+3. **Execute**: Run one prompt per Claude Code session, commit after each
+4. **Review**: Run `/code-review --comment` on the PR
+5. **Learn**: Phase Closure reviews implementation log and updates rules
+6. **Maintain**: Run `/optimise-docs` periodically — cleans stale refs, tightens wording, promotes unpromoted decisions
+
+See `.claude/rules/plan-workflow.md` for full process rules.
+
+## Quality Gate Commands
+<!-- Define your quality gate commands. These are referenced by the process rules. -->
+```bash
+# Example — replace with your project's commands:
+# pnpm typecheck        # Type safety
+# pnpm lint             # Code quality
+# pnpm test             # Regression safety
+# pnpm build            # Bundle/deploy readiness
+# pnpm knip             # Dead code detection (Phase Closure only)
+```
+
+## Merge Strategy
+<!-- Define how PRs are merged. Referenced by Phase Closure. -->
+<!-- Example: gh pr merge --merge --delete-branch -->
+<!-- Example: gh pr merge --squash --delete-branch -->
+
+## Common Commands
+```bash
+# List your project's common commands here
+```
+
+## Platform / Deployment Targets
+<!-- If your project targets multiple platforms (web, mobile, PWA, native), document them here. -->
+<!-- The process rules reference this section for platform compatibility checks. -->
+<!-- Example: -->
+<!-- - Desktop browser -->
+<!-- - PWA (standalone) -->
+<!-- - Mobile native (iOS/Android) -->
